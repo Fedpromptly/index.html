@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="https://www.paypalobjects.com/webstatic/en_US/developer/docs/css/cardfields.css" />
+<title>Token Town — Official Checkout</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 520px; margin: 40px auto; padding: 0 20px; color: #222; }
+  h1 { font-size: 24px; } .brand { color: #0070ba; }
+  .card_container { margin-top: 16px; }
+  #card-field-submit-button { width: 100%; padding: 14px; background: #0070ba; color: #fff; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; margin-top: 16px; }
+  #result-message { margin-top: 20px; font-size: 15px; }
+  .fine { font-size: 12px; color: #666; margin-top: 24px; }
+  select { width: 100%; padding: 12px; font-size: 16px; margin: 12px 0 24px; }
+  label { font-size: 14px; font-weight: bold; display: block; margin-top: 12px; }
+  input[type=text] { width: 100%; padding: 12px; margin: 6px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+</style>
+<!-- PayPal SDK loads dynamically via app.js boot (split mode: frontend on GitHub Pages, backend on Worker) -->
+</head>
+<body>
+<h1><span class="brand">Token Town</span> — Official Checkout</h1>
+<p>Secure card checkout. Processed by PayPal.</p>
+<label for="product">What you're buying</label>
+<select id="product"><option value="test-1-dollar">Test Product ($1) — $undefined</option><option value="dual-muse-apk">Dual-Muse APK (Android) — $undefined</option><option value="token-town-pass">Token Town Membership Pass — $undefined</option></select>
+<div id="paypal-button-container" class="paypal-button-container"></div>
+<div id="card-form" class="card_container">
+  <div id="card-name-field-container"></div>
+  <div id="card-number-field-container"></div>
+  <div id="card-expiry-field-container"></div>
+  <div id="card-cvv-field-container"></div>
+  <div>
+    <label for="card-billing-address-line-1">Billing Address</label>
+    <input type="text" id="card-billing-address-line-1" autocomplete="off" placeholder="Address line 1" />
+  </div>
+  <div>
+    <input type="text" id="card-billing-address-line-2" autocomplete="off" placeholder="Address line 2" />
+  </div>
+  <div>
+    <input type="text" id="card-billing-address-admin-area-line-1" autocomplete="off" placeholder="Admin area line 1" />
+  </div>
+  <div>
+    <input type="text" id="card-billing-address-admin-area-line-2" autocomplete="off" placeholder="Admin area line 2" />
+  </div>
+  <div>
+    <input type="text" id="card-billing-address-country-code" autocomplete="off" placeholder="Country code" />
+  </div>
+  <div>
+    <input type="text" id="card-billing-address-postal-code" autocomplete="off" placeholder="Postal/zip code" />
+  </div>
+  <br /><br />
+  <button id="card-field-submit-button" type="button">Pay now with Card</button>
+</div>
+<p id="result-message"></p>
+<p class="fine">By paying with your card, you acknowledge that your data will be processed by PayPal subject to the PayPal Privacy Statement available at PayPal.com.</p>
+<script src="app.js"></script>
+</body>
+</html>
